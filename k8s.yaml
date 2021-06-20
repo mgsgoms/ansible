@@ -1,0 +1,12 @@
+---
+ - hosts: all 
+   become: true
+   tasks:
+    - name: copy yaml to k8s
+      copy:
+        src: /home/ansible/pod.yaml
+        dest: /home/ansible/
+    - name: Create a Deployment by reading the definition from a local file
+      command: kubectl create -f pod.yaml --kubeconfig /home/ansible/.kube/config
+      args:
+        chdir: /home/ansible/
