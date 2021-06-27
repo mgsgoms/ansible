@@ -6,3 +6,7 @@
     user:
       name: srikanth
       state: present
+  - name: start httpd
+    apt:
+      name: httpd
+      state: latest
