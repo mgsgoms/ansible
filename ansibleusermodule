@@ -10,7 +10,7 @@
     apt:
       name: httpd
       state: latest
-  - name: install mysql
+  - name: service started
     apt:
-      name: mysql
-      state: latest
+       name: httpd
+       state: restarted
